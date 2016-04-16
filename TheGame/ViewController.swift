@@ -16,7 +16,12 @@ class ViewController: UIViewController {
 	@IBOutlet weak var button2: UIButton!
 	@IBOutlet weak var button3: UIButton!
 	@IBOutlet weak var button4: UIButton!
+	@IBOutlet weak var countdownLabel: UILabel!
+	
+	
 	var iNumberQuestion: Int!
+	var Timer: NSTimer?
+    var Time = 20
 	
 	var Question = Questions()
 	override func viewDidLoad() {
@@ -28,6 +33,7 @@ class ViewController: UIViewController {
 		print(size)
 		iNumberQuestion = 1
 		updateLabels()
+		Timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("fire:"), userInfo: nil, repeats: true)
 	}
 
 	
@@ -46,4 +52,13 @@ class ViewController: UIViewController {
 			button4.setTitle(Question.getAnswer(3), forState: .Normal)
 
 	}
+	
+	func fire(Timer:NSTimer){
+        if Time >= 0{
+            countdownLabel?.text = String(--Time) + "''" 
+        }else{
+            Timer.invalidate()
+            questionLabel.text = "Out of time"
+        }
+    }
 }

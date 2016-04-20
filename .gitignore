@@ -3,3 +3,4 @@
 build
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
+TheGame.xcodeproj/project.xcworkspace/xcuserdata/JorgeVazquez.xcuserdatad/UserInterfaceState.xcuserstate

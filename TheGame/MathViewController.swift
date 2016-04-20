@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MathViewController.swift
 //  TheGame
 //
 //  Created by Jorge Vazquez on 4/13/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MathViewController: UIViewController {
 
 	@IBOutlet weak var numberofquestionLabel: UILabel!
 	@IBOutlet weak var questionLabel: UILabel!
@@ -140,6 +140,7 @@ class ViewController: UIViewController {
 			updateLabels()
 			unblockbuttons()
 		}else{
+			
 			button1.enabled = false
 		}
 	}
@@ -176,6 +177,8 @@ class ViewController: UIViewController {
 			button4.enabled = false;
 		}
 	}
+	
+	
 	
 	@IBAction func startButtonPressed(sender: UIButton) {
 		sender.hidden = true

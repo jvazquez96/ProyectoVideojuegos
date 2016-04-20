@@ -12,10 +12,6 @@ class Questions: NSObject, NSCoding{
 	var Question: String
 	var Answers: [String]
 	var iAnswer: Int
-//	init(sQuestion: String, sAnswers: [String]){
-//		Question = sQuestion
-//		Answers = sAnswers
-//	}
 	override init(){
 		//print("Questions")
 		Question = "Placeholder question"

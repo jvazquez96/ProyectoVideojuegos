@@ -15,7 +15,7 @@ class DataModel{
 		loadLevels()
 		//registerDefaults()
 		//firsttime()
-		check()
+		//check()
 	}
 	func firsttime(){
 //		let userDefaults = NSUserDefaults.standardUserDefaults()

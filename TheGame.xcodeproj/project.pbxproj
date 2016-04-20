@@ -14,6 +14,7 @@
 		233DAF351CBEBE0600EAD22B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 233DAF331CBEBE0600EAD22B /* LaunchScreen.storyboard */; };
 		235B37EC1CC22C9400582D50 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235B37EB1CC22C9400582D50 /* Questions.swift */; };
 		235B37EE1CC315FD00582D50 /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235B37ED1CC315FD00582D50 /* Levels.swift */; };
+		23D8525D1CC5AB030036B7CB /* AddQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D8525C1CC5AB030036B7CB /* AddQuestionViewController.swift */; };
 		23F95EBF1CC424D100ED4224 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F95EBE1CC424D100ED4224 /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		233DAF361CBEBE0600EAD22B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		235B37EB1CC22C9400582D50 /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		235B37ED1CC315FD00582D50 /* Levels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
+		23D8525C1CC5AB030036B7CB /* AddQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddQuestionViewController.swift; sourceTree = "<group>"; };
 		23F95EBE1CC424D100ED4224 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +65,7 @@
 				233DAF2A1CBEBE0600EAD22B /* AppDelegate.swift */,
 				233DAF2C1CBEBE0600EAD22B /* ViewController.swift */,
 				233DAF2E1CBEBE0600EAD22B /* Main.storyboard */,
+				23D8525C1CC5AB030036B7CB /* AddQuestionViewController.swift */,
 				235B37EB1CC22C9400582D50 /* Questions.swift */,
 				235B37ED1CC315FD00582D50 /* Levels.swift */,
 				23F95EBE1CC424D100ED4224 /* DataModel.swift */,
@@ -147,6 +150,7 @@
 			files = (
 				23F95EBF1CC424D100ED4224 /* DataModel.swift in Sources */,
 				235B37EC1CC22C9400582D50 /* Questions.swift in Sources */,
+				23D8525D1CC5AB030036B7CB /* AddQuestionViewController.swift in Sources */,
 				235B37EE1CC315FD00582D50 /* Levels.swift in Sources */,
 				233DAF2D1CBEBE0600EAD22B /* ViewController.swift in Sources */,
 				233DAF2B1CBEBE0600EAD22B /* AppDelegate.swift in Sources */,

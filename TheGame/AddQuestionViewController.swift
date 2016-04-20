@@ -10,8 +10,12 @@ import UIKit
 
 class AddQuestionViewController: UIViewController {
 
+	@IBOutlet weak var questionLabel: UILabel!
+	@IBOutlet weak var answer1Label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+		questionLabel.adjustsFontSizeToFitWidth = true
+		answer1Label.adjustsFontSizeToFitWidth = true
 
         // Do any additional setup after loading the view.
     }

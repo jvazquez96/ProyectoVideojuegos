@@ -28,8 +28,8 @@ class Questions: NSObject, NSCoding{
 	func setTitle(sQuestion: String){
 		Question = sQuestion
 	}
-	func addAnswer(sAnswer: String){
-		Answers.append(sAnswer)
+	func setAnswer(sAnswer: String, iIndex: Int){
+		Answers[iIndex] = sAnswer
 	}
 	func getQuestion()->String{
 		return Question

@@ -14,7 +14,7 @@ class DataModel{
 		//print("\(dataFilePath())")
 		loadLevels()
 		//registerDefaults()
-		//firsttime()
+		firsttime()
 		//check()
 	}
 	func firsttime(){

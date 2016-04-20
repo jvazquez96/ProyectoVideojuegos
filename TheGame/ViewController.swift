@@ -36,49 +36,69 @@ class ViewController: UIViewController {
 //		iNumberQuestion = 1
 //		iQuestion = 0
 //		ActualLevel = 0
-		//setValues()
+		setValues()
 		//updateLabels()
-		Timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("fire:"), userInfo: nil, repeats: true)
+		//Timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("fire:"), userInfo: nil, repeats: true)
+		button1.hidden = true
+		button2.hidden = true
+		button3.hidden = true
+		button4.hidden = true
+		numberofquestionLabel.hidden = true
+		questionLabel.hidden = true
+		countdownLabel.hidden = true
 	}
+	
+	func unblockbuttons(){
+		button1.enabled = true
+		button2.enabled = true
+		button3.enabled = true
+		button4.enabled = true
+	}
+	
+	
 	func setValues(){
 		dataModel.Level[ActualLevel].listofQuestions[0].setTitle("2+2")
-		dataModel.Level[ActualLevel].listofQuestions[0].addAnswer("1")
-		dataModel.Level[ActualLevel].listofQuestions[0].addAnswer("2")
-		dataModel.Level[ActualLevel].listofQuestions[0].addAnswer("3")
-		dataModel.Level[ActualLevel].listofQuestions[0].addAnswer("4")
+		dataModel.Level[ActualLevel].listofQuestions[0].setAnswer("1",iIndex: 0)
+		dataModel.Level[ActualLevel].listofQuestions[0].setAnswer("2",iIndex: 1)
+		dataModel.Level[ActualLevel].listofQuestions[0].setAnswer("3",iIndex: 2)
+		dataModel.Level[ActualLevel].listofQuestions[0].setAnswer("4",iIndex: 3)
 		dataModel.Level[ActualLevel].listofQuestions[0].setIndex(4)
 		let question = Questions()
 		question.setTitle("3+5")
-		question.addAnswer("8")
-		question.addAnswer("2")
-		question.addAnswer("9")
-		question.addAnswer("7")
+		question.setAnswer("8",iIndex:0)
+		question.setAnswer("2",iIndex:1)
+		question.setAnswer("9",iIndex:2)
+		question.setAnswer("7",iIndex: 3)
 		question.setIndex(1)
 		let question2 = Questions()
-		question.setTitle("7+3")
-		question.addAnswer("8")
-		question.addAnswer("9")
-		question.addAnswer("10")
-		question.addAnswer("6")
-		question.setIndex(3)
+		question2.setTitle("7+3")
+		question2.setAnswer("8",iIndex: 0)
+		question2.setAnswer("9",iIndex:1)
+		question2.setAnswer("10",iIndex:2)
+		question2.setAnswer("6",iIndex:3)
+		question2.setIndex(3)
 		let question3 = Questions()
 		question3.setTitle("8+7")
-		question3.addAnswer("14")
-		question3.addAnswer("15")
-		question3.addAnswer("16")
-		question3.addAnswer("17")
+		question3.setAnswer("14",iIndex:0)
+		question3.setAnswer("15",iIndex:1)
+		question3.setAnswer("16",iIndex:2)
+		question3.setAnswer("17",iIndex:3)
 		question3.setIndex(2)
 		let question4 = Questions()
 		question4.setTitle("5+9")
-		question4.addAnswer("13")
-		question4.addAnswer("12")
-		question4.addAnswer("16")
-		question4.addAnswer("15")
+		question4.setAnswer("13",iIndex:0)
+		question4.setAnswer("12",iIndex:1)
+		question4.setAnswer("16",iIndex:2)
+		question4.setAnswer("14",iIndex:3)
 		question4.setIndex(4)
 		dataModel.Level[0].listofQuestions.append(question)
 		dataModel.Level[0].listofQuestions.append(question2)
 		dataModel.Level[0].listofQuestions.append(question3)
 		dataModel.Level[0].listofQuestions.append(question4)
+		for var index = 0; index < 5;++index{
+			print("First answer for each question:  \(dataModel.Level[0].listofQuestions[index].getAnswer(0))")
+		}
+		print("Added questions: \(dataModel.Level[0].listofQuestions.count)")
 	}
 	
 
@@ -89,13 +109,12 @@ class ViewController: UIViewController {
 	}
 	
 	func updateLabels(){
-		print("\(iQuestion)")
 		//If we have still questions to display
 		if (dataModel.Level[ActualLevel].listofQuestions.count > 0){
-			numberofquestionLabel.text = ("\(iNumberQuestion)")
-			print("\(dataModel.Level[ActualLevel].listofQuestions.count)")
+			numberofquestionLabel.text = ("Question \(iNumberQuestion)")
 			questionLabel.text = dataModel.Level[ActualLevel].listofQuestions[iQuestion].getQuestion()
-			//print("\(dataModel.Level[ActualLevel].listofQuestions[iQuestion].getAnswer(0))")
+			print("Number of question: \(iQuestion)")
+			print("Answer: \(dataModel.Level[ActualLevel].listofQuestions[iQuestion].getAnswer(0))")
 			button1.setTitle(dataModel.Level[ActualLevel].listofQuestions[iQuestion].getAnswer(0), forState: .Normal)
 			button2.setTitle(dataModel.Level[ActualLevel].listofQuestions[iQuestion].getAnswer(1), forState: .Normal)
 			button3.setTitle(dataModel.Level[ActualLevel].listofQuestions[iQuestion].getAnswer(2), forState: .Normal)
@@ -119,6 +138,7 @@ class ViewController: UIViewController {
 			++iQuestion
 			print("Number of question:  \(iQuestion)"  )
 			updateLabels()
+			unblockbuttons()
 		}else{
 			button1.enabled = false
 		}
@@ -129,6 +149,7 @@ class ViewController: UIViewController {
 			++iQuestion
 			print("Number of question:  \(iQuestion)"  )
 			updateLabels()
+			unblockbuttons()
 		}else{
 			button2.enabled = false
 		}
@@ -139,6 +160,7 @@ class ViewController: UIViewController {
 			++iQuestion
 			print("Number of question:  \(iQuestion)"  )
 			updateLabels()
+			unblockbuttons()
 		}else{
 			button3.enabled = false;
 		}
@@ -149,11 +171,25 @@ class ViewController: UIViewController {
 			++iQuestion
 			print("Number of question:  \(iQuestion)"  )
 			updateLabels()
+			unblockbuttons()
 		}else{
 			button4.enabled = false;
 		}
 	}
 	
+	@IBAction func startButtonPressed(sender: UIButton) {
+		sender.hidden = true
+		button1.hidden = false
+		button2.hidden = false
+		button3.hidden = false
+		button4.hidden = false
+		numberofquestionLabel.hidden = false
+		questionLabel.hidden = false
+		countdownLabel.hidden = false
+		Timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("fire:"), userInfo: nil, repeats: true)
+		updateLabels()
+	}
+
 	
 	
 	
